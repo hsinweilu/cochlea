@@ -117,8 +117,10 @@ def run_zilany2014(
     spike_trains = pd.DataFrame(list(trains))
 
 
-    if isinstance(np.fft.fftpack._fft_cache, dict):
-        np.fft.fftpack._fft_cache = {}
+    # following is incompatible with numpy1.19
+    # commented out by hwl
+#    if isinstance(np.fft.fftpack._fft_cache, dict):
+#        np.fft.fftpack._fft_cache = {}
 
     return spike_trains
 
